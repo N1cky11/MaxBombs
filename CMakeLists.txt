@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+project(Bomb)
+find_package(GTest REQUIRED)
+add_executable(Bomb BombSolverMain.cpp BombSolverClass.cpp)
+target_include_directories(Bomb PRIVATE ${GTest_INCLUDE_DIRS} )
+target_link_libraries(Bomb PRIVATE GTest::GTest GTest::Main)
+enable_testing()
